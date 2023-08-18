@@ -28,10 +28,19 @@ public class frameMain extends javax.swing.JFrame {
         tfNombreEquipo = new javax.swing.JTextField();
         tfPaisEquipo = new javax.swing.JTextField();
         btnCrearEquipo = new javax.swing.JButton();
+        panelModificarJugador = new javax.swing.JPanel();
+        panelListarEquipo = new javax.swing.JPanel();
+        panelEliminarEquipo = new javax.swing.JPanel();
         panelCrearEstadio = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        tfNombreEstadio = new javax.swing.JTextField();
+        panelModificarEstadio = new javax.swing.JPanel();
+        panelListarEstadio = new javax.swing.JPanel();
+        panelEliminarEstadio = new javax.swing.JPanel();
+        panelCrearJugador = new javax.swing.JPanel();
+        paneModificarJugador = new javax.swing.JPanel();
+        panelListarJugador = new javax.swing.JPanel();
+        panelEliminarJugador = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,7 +68,7 @@ public class frameMain extends javax.swing.JFrame {
             .addGroup(panelCrearEquipoLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addGroup(panelCrearEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCrearEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCrearEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelCrearEquipoLayout.createSequentialGroup()
                         .addGroup(panelCrearEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -68,7 +77,7 @@ public class frameMain extends javax.swing.JFrame {
                         .addGroup(panelCrearEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tfNombreEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfPaisEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         panelCrearEquipoLayout.setVerticalGroup(
             panelCrearEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,64 +92,168 @@ public class frameMain extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addComponent(btnCrearEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear equipo", panelCrearEquipo);
 
+        javax.swing.GroupLayout panelModificarJugadorLayout = new javax.swing.GroupLayout(panelModificarJugador);
+        panelModificarJugador.setLayout(panelModificarJugadorLayout);
+        panelModificarJugadorLayout.setHorizontalGroup(
+            panelModificarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+        panelModificarJugadorLayout.setVerticalGroup(
+            panelModificarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 392, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Modificar equipo", panelModificarJugador);
+
+        javax.swing.GroupLayout panelListarEquipoLayout = new javax.swing.GroupLayout(panelListarEquipo);
+        panelListarEquipo.setLayout(panelListarEquipoLayout);
+        panelListarEquipoLayout.setHorizontalGroup(
+            panelListarEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+        panelListarEquipoLayout.setVerticalGroup(
+            panelListarEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 392, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Listar equipo", panelListarEquipo);
+
+        javax.swing.GroupLayout panelEliminarEquipoLayout = new javax.swing.GroupLayout(panelEliminarEquipo);
+        panelEliminarEquipo.setLayout(panelEliminarEquipoLayout);
+        panelEliminarEquipoLayout.setHorizontalGroup(
+            panelEliminarEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+        panelEliminarEquipoLayout.setVerticalGroup(
+            panelEliminarEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 392, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Eliminar equipo", panelEliminarEquipo);
+
         panelCrearEstadio.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Nombre del estadio");
 
         javax.swing.GroupLayout panelCrearEstadioLayout = new javax.swing.GroupLayout(panelCrearEstadio);
         panelCrearEstadio.setLayout(panelCrearEstadioLayout);
         panelCrearEstadioLayout.setHorizontalGroup(
             panelCrearEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(panelCrearEstadioLayout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tfNombreEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(398, Short.MAX_VALUE))
         );
         panelCrearEstadioLayout.setVerticalGroup(
             panelCrearEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 369, Short.MAX_VALUE)
+            .addGroup(panelCrearEstadioLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(panelCrearEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(tfNombreEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(331, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear estadio", panelCrearEstadio);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+        javax.swing.GroupLayout panelModificarEstadioLayout = new javax.swing.GroupLayout(panelModificarEstadio);
+        panelModificarEstadio.setLayout(panelModificarEstadioLayout);
+        panelModificarEstadioLayout.setHorizontalGroup(
+            panelModificarEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 369, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab3", jPanel3);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 369, Short.MAX_VALUE)
+        panelModificarEstadioLayout.setVerticalGroup(
+            panelModificarEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 392, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab4", jPanel4);
+        jTabbedPane1.addTab("Modificar estadio", panelModificarEstadio);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+        javax.swing.GroupLayout panelListarEstadioLayout = new javax.swing.GroupLayout(panelListarEstadio);
+        panelListarEstadio.setLayout(panelListarEstadioLayout);
+        panelListarEstadioLayout.setHorizontalGroup(
+            panelListarEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 369, Short.MAX_VALUE)
+        panelListarEstadioLayout.setVerticalGroup(
+            panelListarEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 392, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab5", jPanel5);
+        jTabbedPane1.addTab("Listar estadio", panelListarEstadio);
+
+        javax.swing.GroupLayout panelEliminarEstadioLayout = new javax.swing.GroupLayout(panelEliminarEstadio);
+        panelEliminarEstadio.setLayout(panelEliminarEstadioLayout);
+        panelEliminarEstadioLayout.setHorizontalGroup(
+            panelEliminarEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+        panelEliminarEstadioLayout.setVerticalGroup(
+            panelEliminarEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 392, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Eliminar estadio", panelEliminarEstadio);
+
+        javax.swing.GroupLayout panelCrearJugadorLayout = new javax.swing.GroupLayout(panelCrearJugador);
+        panelCrearJugador.setLayout(panelCrearJugadorLayout);
+        panelCrearJugadorLayout.setHorizontalGroup(
+            panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+        panelCrearJugadorLayout.setVerticalGroup(
+            panelCrearJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 392, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Crear jugador", panelCrearJugador);
+
+        javax.swing.GroupLayout paneModificarJugadorLayout = new javax.swing.GroupLayout(paneModificarJugador);
+        paneModificarJugador.setLayout(paneModificarJugadorLayout);
+        paneModificarJugadorLayout.setHorizontalGroup(
+            paneModificarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+        paneModificarJugadorLayout.setVerticalGroup(
+            paneModificarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 392, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Modificar jugador", paneModificarJugador);
+
+        javax.swing.GroupLayout panelListarJugadorLayout = new javax.swing.GroupLayout(panelListarJugador);
+        panelListarJugador.setLayout(panelListarJugadorLayout);
+        panelListarJugadorLayout.setHorizontalGroup(
+            panelListarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+        panelListarJugadorLayout.setVerticalGroup(
+            panelListarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 392, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Listar jugador", panelListarJugador);
+
+        javax.swing.GroupLayout panelEliminarJugadorLayout = new javax.swing.GroupLayout(panelEliminarJugador);
+        panelEliminarJugador.setLayout(panelEliminarJugadorLayout);
+        panelEliminarJugadorLayout.setHorizontalGroup(
+            panelEliminarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+        panelEliminarJugadorLayout.setVerticalGroup(
+            panelEliminarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 392, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Eliminar jugador", panelEliminarJugador);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -212,13 +325,22 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JButton btnCrearEquipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel paneModificarJugador;
     private javax.swing.JPanel panelCrearEquipo;
     private javax.swing.JPanel panelCrearEstadio;
+    private javax.swing.JPanel panelCrearJugador;
+    private javax.swing.JPanel panelEliminarEquipo;
+    private javax.swing.JPanel panelEliminarEstadio;
+    private javax.swing.JPanel panelEliminarJugador;
+    private javax.swing.JPanel panelListarEquipo;
+    private javax.swing.JPanel panelListarEstadio;
+    private javax.swing.JPanel panelListarJugador;
+    private javax.swing.JPanel panelModificarEstadio;
+    private javax.swing.JPanel panelModificarJugador;
     private javax.swing.JTextField tfNombreEquipo;
+    private javax.swing.JTextField tfNombreEstadio;
     private javax.swing.JTextField tfPaisEquipo;
     // End of variables declaration//GEN-END:variables
 }
