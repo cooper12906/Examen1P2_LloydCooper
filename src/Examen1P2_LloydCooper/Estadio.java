@@ -51,8 +51,7 @@ public class Estadio {
     
     @Override
     public String toString() {
-        return "Estadio:\n" +
-               "Nombre del Estadio: " + nombreEstadio + "\n" +
+        return "Nombre del estadio: " + nombreEstadio + "\n" +
                "Ciudad: " + ciudad + "\n" +
                "Capacidad: " + capacidad + "\n" +
                "Equipo dueño: " + nombreEquipo();

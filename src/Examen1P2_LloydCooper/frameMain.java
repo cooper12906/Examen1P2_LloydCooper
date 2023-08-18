@@ -1,11 +1,13 @@
 package Examen1P2_LloydCooper;
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 public class frameMain extends javax.swing.JFrame {
 
     private ArrayList <Equipo> equipos = new ArrayList();
+    private ArrayList <Estadio> estadios = new ArrayList();
     
     public frameMain() {
         initComponents();
@@ -34,6 +36,12 @@ public class frameMain extends javax.swing.JFrame {
         panelCrearEstadio = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         tfNombreEstadio = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        tfCiudadEstadio = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        tfCapacidadEstadio = new javax.swing.JTextField();
+        comboBoxEquipos = new javax.swing.JComboBox<>();
+        btnCrearEstadio = new javax.swing.JButton();
         panelModificarEstadio = new javax.swing.JPanel();
         panelListarEstadio = new javax.swing.JPanel();
         panelEliminarEstadio = new javax.swing.JPanel();
@@ -141,16 +149,44 @@ public class frameMain extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Nombre del estadio");
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Ciudad del estadio");
+
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Capacidad del estadio");
+
+        comboBoxEquipos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+
+        btnCrearEstadio.setText("Crear estadio");
+        btnCrearEstadio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCrearEstadioMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelCrearEstadioLayout = new javax.swing.GroupLayout(panelCrearEstadio);
         panelCrearEstadio.setLayout(panelCrearEstadioLayout);
         panelCrearEstadioLayout.setHorizontalGroup(
             panelCrearEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrearEstadioLayout.createSequentialGroup()
                 .addGap(76, 76, 76)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tfNombreEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(398, Short.MAX_VALUE))
+                .addGroup(panelCrearEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboBoxEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelCrearEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(panelCrearEstadioLayout.createSequentialGroup()
+                            .addComponent(jLabel5)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tfCapacidadEstadio))
+                        .addGroup(panelCrearEstadioLayout.createSequentialGroup()
+                            .addComponent(jLabel4)
+                            .addGap(18, 18, 18)
+                            .addComponent(tfCiudadEstadio))
+                        .addGroup(panelCrearEstadioLayout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(tfNombreEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnCrearEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         panelCrearEstadioLayout.setVerticalGroup(
             panelCrearEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +195,19 @@ public class frameMain extends javax.swing.JFrame {
                 .addGroup(panelCrearEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(tfNombreEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(331, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(panelCrearEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(tfCiudadEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panelCrearEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(tfCapacidadEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(comboBoxEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnCrearEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear estadio", panelCrearEstadio);
@@ -270,8 +318,7 @@ public class frameMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearEquipoMouseClicked
-           
-        
+              
         if (tfNombreEquipo.getText().equals("") || tfPaisEquipo.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Ingrese todos los atributos");
         } else {
@@ -281,10 +328,37 @@ public class frameMain extends javax.swing.JFrame {
             equipos.add(new Equipo(nombreEquipo, paisEquipo));
             tfNombreEquipo.setText("");
             tfPaisEquipo.setText("");
+            
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) comboBoxEquipos.getModel();
+            
+            for (Equipo equipo : equipos) {
+                modelo.addElement(equipo);
+            }
 
             JOptionPane.showMessageDialog(this, "Equipo creado correctamente");     
         }   
     }//GEN-LAST:event_btnCrearEquipoMouseClicked
+
+    private void btnCrearEstadioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearEstadioMouseClicked
+        
+        if (tfNombreEstadio.getText().equals("") || tfCiudadEstadio.getText().equals("") 
+                || tfCapacidadEstadio.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Ingrese todos los atributos");
+        } else {
+            String nombreEquipo = tfNombreEstadio.getText();
+            String paisEquipo = tfCiudadEstadio.getText();
+            int capacidadEquipo = Integer.parseInt(tfCapacidadEstadio.getText());
+            Equipo equipo = equipos.get(comboBoxEquipos.getSelectedIndex()); 
+            
+            estadios.add(new Estadio(nombreEquipo, paisEquipo, capacidadEquipo, equipo));
+            
+            tfNombreEstadio.setText("");
+            tfCiudadEstadio.setText("");
+            tfCapacidadEstadio.setText("");
+            
+            JOptionPane.showMessageDialog(this, "Estadio creado correctamente");     
+        } 
+    }//GEN-LAST:event_btnCrearEstadioMouseClicked
 
     /**
      * @param args the command line arguments
@@ -323,9 +397,13 @@ public class frameMain extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrearEquipo;
+    private javax.swing.JButton btnCrearEstadio;
+    private javax.swing.JComboBox<String> comboBoxEquipos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JPanel paneModificarJugador;
     private javax.swing.JPanel panelCrearEquipo;
@@ -339,6 +417,8 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JPanel panelListarJugador;
     private javax.swing.JPanel panelModificarEstadio;
     private javax.swing.JPanel panelModificarJugador;
+    private javax.swing.JTextField tfCapacidadEstadio;
+    private javax.swing.JTextField tfCiudadEstadio;
     private javax.swing.JTextField tfNombreEquipo;
     private javax.swing.JTextField tfNombreEstadio;
     private javax.swing.JTextField tfPaisEquipo;
