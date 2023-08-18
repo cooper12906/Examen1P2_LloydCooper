@@ -1,20 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Examen1P2_LloydCooper;
 
-/**
- *
- * @author CUSTOMER PC
- */
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 public class frameMain extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frameMain
-     */
+    private ArrayList <Equipo> equipos = new ArrayList();
+    
     public frameMain() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -30,9 +25,9 @@ public class frameMain extends javax.swing.JFrame {
         panelCrearEquipo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        tfNombreEquipo = new javax.swing.JTextField();
+        tfPaisEquipo = new javax.swing.JTextField();
+        btnCrearEquipo = new javax.swing.JButton();
         panelCrearEstadio = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -50,7 +45,12 @@ public class frameMain extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Pais del equipo");
 
-        jButton2.setText("Crear equipo");
+        btnCrearEquipo.setText("Crear equipo");
+        btnCrearEquipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCrearEquipoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelCrearEquipoLayout = new javax.swing.GroupLayout(panelCrearEquipo);
         panelCrearEquipo.setLayout(panelCrearEquipoLayout);
@@ -59,15 +59,15 @@ public class frameMain extends javax.swing.JFrame {
             .addGroup(panelCrearEquipoLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addGroup(panelCrearEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCrearEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelCrearEquipoLayout.createSequentialGroup()
                         .addGroup(panelCrearEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(panelCrearEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(tfNombreEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfPaisEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
         panelCrearEquipoLayout.setVerticalGroup(
@@ -76,13 +76,13 @@ public class frameMain extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(panelCrearEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfNombreEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelCrearEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfPaisEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCrearEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -156,6 +156,23 @@ public class frameMain extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCrearEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearEquipoMouseClicked
+           
+        
+        if (tfNombreEquipo.getText().equals("") || tfPaisEquipo.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Ingrese todos los atributos");
+        } else {
+            String nombreEquipo = tfNombreEquipo.getText();
+            String paisEquipo = tfPaisEquipo.getText();
+
+            equipos.add(new Equipo(nombreEquipo, paisEquipo));
+            tfNombreEquipo.setText("");
+            tfPaisEquipo.setText("");
+
+            JOptionPane.showMessageDialog(this, "Equipo creado correctamente");     
+        }   
+    }//GEN-LAST:event_btnCrearEquipoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -192,16 +209,16 @@ public class frameMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnCrearEquipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel panelCrearEquipo;
     private javax.swing.JPanel panelCrearEstadio;
+    private javax.swing.JTextField tfNombreEquipo;
+    private javax.swing.JTextField tfPaisEquipo;
     // End of variables declaration//GEN-END:variables
 }

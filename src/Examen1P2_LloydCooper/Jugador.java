@@ -71,7 +71,7 @@ public class Jugador {
         return rating;
     }
 
-    private void setRating(int rating) {
+    protected void setRating(int rating) {
         this.rating = rating;
     }
 

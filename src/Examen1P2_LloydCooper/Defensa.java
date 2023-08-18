@@ -1,13 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Examen1P2_LloydCooper;
 
-/**
- *
- * @author CUSTOMER PC
- */
-public class Defensa {
-    
+public class Defensa extends Jugador {
+
+    public Defensa(String nombre, int edad, String nacionalidad, String pieHabil, int rating, Equipo equipoJugador) {
+        super(nombre, edad, nacionalidad, pieHabil, rating, equipoJugador);
+    }
 }
