@@ -6,12 +6,12 @@ public class Equipo {
     private String nombreEquipo;
     private String pais;
     private int ratingEquipo;
-    private ArrayList<Jugador> plantillas = new ArrayList();
+    private ArrayList <Jugador> plantillas = new ArrayList();
 
-    public Equipo(String nombreEquipo, String pais, int ratingEquipo) {
+    public Equipo(String nombreEquipo, String pais) {
         this.nombreEquipo = nombreEquipo;
         this.pais = pais;
-        this.ratingEquipo = ratingEquipo;
+        this.ratingEquipo = 0;
     }
 
     public String getNombreEquipo() {
@@ -46,12 +46,17 @@ public class Equipo {
         this.plantillas = plantillas;
     }
 
+    public int updateRating(){
+        
+        return 0;
+    }
+    
     @Override
     public String toString() {
         return "Equipo:\n" +
                "Nombre del Equipo: " + nombreEquipo + "\n" +
                "País: " + pais + "\n" +
                "Rating del Equipo: " + ratingEquipo + "\n" +
-               "Plantillas: " + plantillas;
+               "Plantilla: " + plantillas;
     }
 }
