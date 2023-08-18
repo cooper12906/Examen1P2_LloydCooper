@@ -17,12 +17,12 @@ public class Jugador {
     private int regate;
     private int disparo;
 
-    public Jugador(String nombre, int edad, String nacionalidad, String pieHabil, int rating, Equipo equipoJugador) {
+    public Jugador(String nombre, int edad, String nacionalidad, String pieHabil,Equipo equipoJugador) {
         this.nombre = nombre;
         this.edad = edad;
         this.nacionalidad = nacionalidad;
         this.pieHabil = pieHabil;
-        this.rating = rating;
+        this.rating = 0;
         this.equipoJugador = equipoJugador;
         this.agarre = 0;
         this.lanzamiento = 0;
