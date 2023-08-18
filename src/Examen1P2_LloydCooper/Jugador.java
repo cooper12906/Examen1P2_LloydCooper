@@ -156,13 +156,21 @@ public class Jugador {
     }
 
     @Override
-    public String toString() {
-        return "Jugador{" + "nombre=" + nombre + ", edad=" + edad + ", nacionalidad=" + nacionalidad + ", pieHabil=" + pieHabil + ", rating=" + rating + ", equipoJugador=" + equipoJugador + ", agarre=" + agarre + ", lanzamiento=" + lanzamiento + ", fisico=" + fisico + ", ritmo=" + ritmo + ", entrada=" + entrada + ", vision=" + vision + ", passing=" + passing + ", regate=" + regate + ", disparo=" + disparo + '}';
+        public String toString() {
+            return "Jugador: " + nombre +
+                   "\nEdad: " + edad +
+                   "\nNacionalidad: " + nacionalidad +
+                   "\nPie Hábil: " + pieHabil +
+                   "\nRating: " + rating +
+                   "\nEquipo: " + equipoJugador +
+                   "\nAgarre: " + agarre +
+                   "\nLanzamiento: " + lanzamiento +
+                   "\nFísico: " + fisico +
+                   "\nRitmo: " + ritmo +
+                   "\nEntrada: " + entrada +
+                   "\nVisión: " + vision +
+                   "\nPassing: " + passing +
+                   "\nRegate: " + regate +
+                   "\nDisparo: " + disparo;
     }
-    
-    
-    
-    
-    
-    
 }

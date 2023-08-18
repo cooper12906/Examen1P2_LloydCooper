@@ -53,9 +53,6 @@ public class Equipo {
     
     @Override
     public String toString() {
-        return "Nombre del equipo: " + nombreEquipo + "\n" +
-               "País: " + pais + "\n" +
-               "Rating del equipo: " + ratingEquipo + "\n" +
-               "Plantilla: " + plantillas;
+        return nombreEquipo;
     }
 }
