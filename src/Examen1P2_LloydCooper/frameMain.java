@@ -6,10 +6,10 @@ import javax.swing.JOptionPane;
 
 public class frameMain extends javax.swing.JFrame {
 
-    private ArrayList <Equipo> equipos = new ArrayList();
-    private ArrayList <Estadio> estadios = new ArrayList();
-    private ArrayList <Jugador> jugadores = new ArrayList();
-    
+    private ArrayList<Equipo> equipos = new ArrayList();
+    private ArrayList<Estadio> estadios = new ArrayList();
+    private ArrayList<Jugador> jugadores = new ArrayList();
+
     public frameMain() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -52,6 +52,14 @@ public class frameMain extends javax.swing.JFrame {
         comboBoxEquipos = new javax.swing.JComboBox<>();
         btnCrearEstadio = new javax.swing.JButton();
         panelModificarEstadio = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        tfCiudadEstadio1 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        tfNombreEstadio1 = new javax.swing.JTextField();
+        tfCapacidadEstadio1 = new javax.swing.JTextField();
+        comboBoxEquipos1 = new javax.swing.JComboBox<>();
+        btnModificarEstadio = new javax.swing.JButton();
         panelListarEstadio = new javax.swing.JPanel();
         panelEliminarEstadio = new javax.swing.JPanel();
         comboBoxEliminarEstadio = new javax.swing.JComboBox<>();
@@ -82,7 +90,7 @@ public class frameMain extends javax.swing.JFrame {
         panelListarJugador = new javax.swing.JPanel();
         panelEliminarJugador = new javax.swing.JPanel();
         btnEliminarJugador = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboBoxEliminarJugador = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -313,15 +321,68 @@ public class frameMain extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear estadio", panelCrearEstadio);
 
+        panelModificarEstadio.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setText("Ciudad del estadio");
+
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setText("Nombre del estadio");
+
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel18.setText("Capacidad del estadio");
+
+        btnModificarEstadio.setText("Modificar estadio");
+        btnModificarEstadio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnModificarEstadioMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelModificarEstadioLayout = new javax.swing.GroupLayout(panelModificarEstadio);
         panelModificarEstadio.setLayout(panelModificarEstadioLayout);
         panelModificarEstadioLayout.setHorizontalGroup(
             panelModificarEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addGroup(panelModificarEstadioLayout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addGroup(panelModificarEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboBoxEquipos1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelModificarEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(panelModificarEstadioLayout.createSequentialGroup()
+                            .addComponent(jLabel18)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tfCapacidadEstadio1))
+                        .addGroup(panelModificarEstadioLayout.createSequentialGroup()
+                            .addComponent(jLabel16)
+                            .addGap(18, 18, 18)
+                            .addComponent(tfCiudadEstadio1))
+                        .addGroup(panelModificarEstadioLayout.createSequentialGroup()
+                            .addComponent(jLabel17)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(tfNombreEstadio1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnModificarEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         panelModificarEstadioLayout.setVerticalGroup(
             panelModificarEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 392, Short.MAX_VALUE)
+            .addGroup(panelModificarEstadioLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(panelModificarEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(tfNombreEstadio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panelModificarEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(tfCiudadEstadio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panelModificarEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(tfCapacidadEstadio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(comboBoxEquipos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnModificarEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Modificar estadio", panelModificarEstadio);
@@ -546,6 +607,11 @@ public class frameMain extends javax.swing.JFrame {
         panelEliminarJugador.setBackground(new java.awt.Color(255, 255, 255));
 
         btnEliminarJugador.setText("Eliminar jugador");
+        btnEliminarJugador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEliminarJugadorMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelEliminarJugadorLayout = new javax.swing.GroupLayout(panelEliminarJugador);
         panelEliminarJugador.setLayout(panelEliminarJugadorLayout);
@@ -553,7 +619,7 @@ public class frameMain extends javax.swing.JFrame {
             panelEliminarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEliminarJugadorLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboBoxEliminarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEliminarJugadorLayout.createSequentialGroup()
                 .addContainerGap(54, Short.MAX_VALUE)
@@ -564,7 +630,7 @@ public class frameMain extends javax.swing.JFrame {
             panelEliminarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEliminarJugadorLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboBoxEliminarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnEliminarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(47, Short.MAX_VALUE))
@@ -587,7 +653,7 @@ public class frameMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearEquipoMouseClicked
-              
+
         if (tfNombreEquipo.getText().equals("") || tfPaisEquipo.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Ingrese todos los atributos");
         } else {
@@ -597,78 +663,95 @@ public class frameMain extends javax.swing.JFrame {
             equipos.add(new Equipo(nombreEquipo, paisEquipo));
             tfNombreEquipo.setText("");
             tfPaisEquipo.setText("");
-            
+
             DefaultComboBoxModel modelo = (DefaultComboBoxModel) comboBoxEquipos.getModel();
-            
+
             for (Equipo equipo : equipos) {
                 modelo.addElement(equipo);
             }
-            
+
             comboBoxEquipos.setModel(modelo);
             comboBoxEquipoJugador.setModel(modelo);
             comboBoxModificarEquipo.setModel(modelo);
             comboBoxEliminarEquipo.setModel(modelo);
             comboBoxModificarEquipoJugador.setModel(modelo);
-            
 
-            JOptionPane.showMessageDialog(this, "Equipo creado correctamente");     
-        }   
+            JOptionPane.showMessageDialog(this, "Equipo creado correctamente");
+        }
     }//GEN-LAST:event_btnCrearEquipoMouseClicked
 
     private void btnCrearEstadioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearEstadioMouseClicked
-        
-        if (tfNombreEstadio.getText().equals("") || tfCiudadEstadio.getText().equals("") 
+
+        if (tfNombreEstadio.getText().equals("") || tfCiudadEstadio.getText().equals("")
                 || tfCapacidadEstadio.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Ingrese todos los atributos");
         } else {
             String nombreEquipo = tfNombreEstadio.getText();
             String paisEquipo = tfCiudadEstadio.getText();
             int capacidadEquipo = Integer.parseInt(tfCapacidadEstadio.getText());
-            Equipo equipo = equipos.get(comboBoxEquipos.getSelectedIndex()); 
-            
+            Equipo equipo = equipos.get(comboBoxEquipos.getSelectedIndex());
+
             estadios.add(new Estadio(nombreEquipo, paisEquipo, capacidadEquipo, equipo));
-            
+
             tfNombreEstadio.setText("");
             tfCiudadEstadio.setText("");
             tfCapacidadEstadio.setText("");
-            
-            JOptionPane.showMessageDialog(this, "Estadio creado correctamente");     
-        } 
+
+            JOptionPane.showMessageDialog(this, "Estadio creado correctamente");
+        }
     }//GEN-LAST:event_btnCrearEstadioMouseClicked
 
     private void btnCrearJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearJugadorMouseClicked
-       
-        if (tfNombreJugador.getText().equals("") || tfEdadJugador.getText().equals("") 
-            || tfNacionalidadJugador.getText().equals("") || tfPieHabilJugador.getText().equals("")) {
-            
+
+        if (tfNombreJugador.getText().equals("") || tfEdadJugador.getText().equals("")
+                || tfNacionalidadJugador.getText().equals("") || tfPieHabilJugador.getText().equals("")) {
+
             JOptionPane.showMessageDialog(this, "Ingrese todos los atributos");
-            
+
         } else {
             String nombreJugador = tfNombreJugador.getText();
             int edadJugador = Integer.parseInt(tfEdadJugador.getText());
             String nacionalidadJugador = tfNacionalidadJugador.getText();
             String pieHabilJugador = tfPieHabilJugador.getText();
-            Equipo equipo = equipos.get(comboBoxEquipoJugador.getSelectedIndex()); 
-           
+            Equipo equipo = equipos.get(comboBoxEquipoJugador.getSelectedIndex());
+
             tfNombreJugador.setText("");
             tfEdadJugador.setText("");
             tfNacionalidadJugador.setText("");
             tfPieHabilJugador.setText("");
-            
-            if (comboBoxPosicionJugador.getSelectedIndex() == 0) {
-                jugadores.add(new Portero(nombreJugador, edadJugador, nacionalidadJugador, pieHabilJugador, equipo));
-                JOptionPane.showMessageDialog(this, "Portero creado correctamente");
-            } else if (comboBoxPosicionJugador.getSelectedIndex() == 1) {
-                jugadores.add(new Defensa(nombreJugador, edadJugador, nacionalidadJugador, pieHabilJugador, equipo));
-                JOptionPane.showMessageDialog(this, "Defensa creado correctamente");
-            } else if (comboBoxPosicionJugador.getSelectedIndex() == 2) {
-                jugadores.add(new Mediocampista(nombreJugador, edadJugador, nacionalidadJugador, pieHabilJugador, equipo));
-                JOptionPane.showMessageDialog(this, "Mediocampista creado correctamente");    
-            } else if (comboBoxPosicionJugador.getSelectedIndex() == 3) {
-               jugadores.add(new Delantero(nombreJugador, edadJugador, nacionalidadJugador, pieHabilJugador, equipo));
-                JOptionPane.showMessageDialog(this, "Delantero creado correctamente");  
-            }    
-        } 
+
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) comboBoxEliminarJugador.getModel();
+
+            for (Jugador jugador : jugadores) {
+                modelo.addElement(jugador);
+            }
+
+            comboBoxEliminarJugador.setModel(modelo);
+
+            if (equipos.get(comboBoxEquipoJugador.getSelectedIndex()).getPlantillas().size() < 4) {
+                if (comboBoxPosicionJugador.getSelectedIndex() == 0) {
+                    Portero portero = new Portero(nombreJugador, edadJugador, nacionalidadJugador, pieHabilJugador, equipo);
+                    jugadores.add(portero);
+                    equipos.get(comboBoxEquipoJugador.getSelectedIndex()).getPlantillas().add(portero);
+                    JOptionPane.showMessageDialog(this, "Portero creado correctamente");
+                } else if (comboBoxPosicionJugador.getSelectedIndex() == 1) {
+                    Defensa defensa = new Defensa(nombreJugador, edadJugador, nacionalidadJugador, pieHabilJugador, equipo);
+                    jugadores.add(defensa);
+                    equipos.get(comboBoxEquipoJugador.getSelectedIndex()).getPlantillas().add(defensa);
+                    JOptionPane.showMessageDialog(this, "Defensa creado correctamente");
+                } else if (comboBoxPosicionJugador.getSelectedIndex() == 2) {
+                    Mediocampista mediocampista = new Mediocampista(nombreJugador, edadJugador, nacionalidadJugador, pieHabilJugador, equipo);
+                    jugadores.add(mediocampista);
+                    equipos.get(comboBoxEquipoJugador.getSelectedIndex()).getPlantillas().add(mediocampista);
+                    JOptionPane.showMessageDialog(this, "Mediocampista creado correctamente");
+                } else if (comboBoxPosicionJugador.getSelectedIndex() == 3) {
+                    Delantero delantero = new Delantero(nombreJugador, edadJugador, nacionalidadJugador, pieHabilJugador, equipo);
+                    jugadores.add(delantero);
+                    equipos.get(comboBoxEquipoJugador.getSelectedIndex()).getPlantillas().add(delantero);
+                    JOptionPane.showMessageDialog(this, "Delantero creado correctamente");
+                }
+            }
+        }
     }//GEN-LAST:event_btnCrearJugadorMouseClicked
 
     private void btnModificarEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarEquipoMouseClicked
@@ -680,7 +763,6 @@ public class frameMain extends javax.swing.JFrame {
             equipoSeleccionado.setNombreEquipo(nuevoNombreEquipo);
             equipoSeleccionado.setPais(nuevoPaisEquipo);
 
-            // Limpiar los campos de texto
             tfNuevoNombreEquipo.setText("");
             tfNuevoPaisEquipo.setText("");
 
@@ -694,9 +776,9 @@ public class frameMain extends javax.swing.JFrame {
         if (comboBoxEliminarEquipo.getSelectedIndex() >= 0) {
             equipos.remove(comboBoxEliminarEquipo.getSelectedIndex());
             for (Equipo equipo : equipos) {
-                
+
             }
-        }   
+        }
         JOptionPane.showMessageDialog(this, "Equipo eliminado correctamente");
     }//GEN-LAST:event_btnEliminarEquipoMouseClicked
 
@@ -704,14 +786,20 @@ public class frameMain extends javax.swing.JFrame {
         if (comboBoxEliminarEstadio.getSelectedIndex() >= 0) {
             estadios.remove(comboBoxEliminarEstadio.getSelectedIndex());
             for (Equipo equipo : equipos) {
-                
+
             }
         }
         JOptionPane.showMessageDialog(this, "Estadio eliminado correctamente");
     }//GEN-LAST:event_btnEliminarEstadioMouseClicked
-    
-    
-    
+
+    private void btnEliminarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarJugadorMouseClicked
+
+    }//GEN-LAST:event_btnEliminarJugadorMouseClicked
+
+    private void btnModificarEstadioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarEstadioMouseClicked
+
+    }//GEN-LAST:event_btnModificarEstadioMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -755,15 +843,17 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarEstadio;
     private javax.swing.JButton btnEliminarJugador;
     private javax.swing.JButton btnModificarEquipo;
+    private javax.swing.JButton btnModificarEstadio;
     private javax.swing.JButton btnModificarJugador;
     private javax.swing.JComboBox<String> comboBoxEliminarEquipo;
     private javax.swing.JComboBox<String> comboBoxEliminarEstadio;
+    private javax.swing.JComboBox<String> comboBoxEliminarJugador;
     private javax.swing.JComboBox<String> comboBoxEquipoJugador;
     private javax.swing.JComboBox<String> comboBoxEquipos;
+    private javax.swing.JComboBox<String> comboBoxEquipos1;
     private javax.swing.JComboBox<String> comboBoxModificarEquipo;
     private javax.swing.JComboBox<String> comboBoxModificarEquipoJugador;
     private javax.swing.JComboBox<String> comboBoxPosicionJugador;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -771,6 +861,9 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -793,11 +886,14 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JPanel panelModificarEstadio;
     private javax.swing.JPanel panelModificarJugador;
     private javax.swing.JTextField tfCapacidadEstadio;
+    private javax.swing.JTextField tfCapacidadEstadio1;
     private javax.swing.JTextField tfCiudadEstadio;
+    private javax.swing.JTextField tfCiudadEstadio1;
     private javax.swing.JTextField tfEdadJugador;
     private javax.swing.JTextField tfNacionalidadJugador;
     private javax.swing.JTextField tfNombreEquipo;
     private javax.swing.JTextField tfNombreEstadio;
+    private javax.swing.JTextField tfNombreEstadio1;
     private javax.swing.JTextField tfNombreJugador;
     private javax.swing.JTextField tfNuevaEdadJugador;
     private javax.swing.JTextField tfNuevaNacionalidadJugador;
