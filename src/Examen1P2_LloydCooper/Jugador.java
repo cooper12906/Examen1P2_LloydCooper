@@ -1,6 +1,6 @@
 package Examen1P2_LloydCooper;
 
-public class Jugador {
+public abstract class Jugador {
     private String nombre;
     private int edad;
     private String nacionalidad;
