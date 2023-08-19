@@ -5,17 +5,17 @@ public abstract class Jugador {
     private int edad;
     private String nacionalidad;
     private String pieHabil;
-    private int rating;
+    protected int rating;
     private Equipo equipoJugador;
-    private int agarre;
-    private int lanzamiento;
-    private int fisico;
-    private int ritmo;
-    private int entrada;
-    private int vision;
-    private int passing;
-    private int regate;
-    private int disparo;
+    protected int agarre;
+    protected int lanzamiento;
+    protected int fisico;
+    protected int ritmo;
+    protected int entrada;
+    protected int vision;
+    protected int passing;
+    protected int regate;
+    protected int disparo;
 
     public Jugador(String nombre, int edad, String nacionalidad, String pieHabil,Equipo equipoJugador) {
         this.nombre = nombre;
