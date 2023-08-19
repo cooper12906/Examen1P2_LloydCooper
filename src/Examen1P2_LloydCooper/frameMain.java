@@ -890,6 +890,16 @@ public class frameMain extends javax.swing.JFrame {
                 }
             }
             
+            if (equipos.get(comboBoxEquipoJugador.getSelectedIndex()).getPlantillas().size() == 4) {
+                int prom = 0;
+                for (int i = 0; i <= 3; i++) {
+                    prom += equipos.get(comboBoxEquipoJugador.getSelectedIndex()).getPlantillas().get(i).getRating();
+                }
+                prom = prom/4;
+                equipos.get(comboBoxEquipoJugador.getSelectedIndex()).setRatingEquipo(prom);
+            }
+            
+            
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
 
             for (Jugador jugador : jugadores) {
