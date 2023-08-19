@@ -472,7 +472,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="comboBoxEquipos1" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
+                          <Component id="comboBoxModificarEstadioEquipo" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
@@ -515,7 +515,7 @@
                           <Component id="tfCapacidadEstadio1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="comboBoxEquipos1" min="-2" max="-2" attributes="0"/>
+                      <Component id="comboBoxModificarEstadioEquipo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnModificarEstadio" min="-2" pref="150" max="-2" attributes="0"/>
                       <EmptySpace pref="32" max="32767" attributes="0"/>
@@ -554,7 +554,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="tfCapacidadEstadio1">
             </Component>
-            <Component class="javax.swing.JComboBox" name="comboBoxEquipos1">
+            <Component class="javax.swing.JComboBox" name="comboBoxModificarEstadioEquipo">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>

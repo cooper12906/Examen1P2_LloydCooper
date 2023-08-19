@@ -58,7 +58,7 @@ public class frameMain extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         tfNombreEstadio1 = new javax.swing.JTextField();
         tfCapacidadEstadio1 = new javax.swing.JTextField();
-        comboBoxEquipos1 = new javax.swing.JComboBox<>();
+        comboBoxModificarEstadioEquipo = new javax.swing.JComboBox<>();
         btnModificarEstadio = new javax.swing.JButton();
         panelListarEstadio = new javax.swing.JPanel();
         panelEliminarEstadio = new javax.swing.JPanel();
@@ -346,7 +346,7 @@ public class frameMain extends javax.swing.JFrame {
             .addGroup(panelModificarEstadioLayout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addGroup(panelModificarEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(comboBoxEquipos1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboBoxModificarEstadioEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelModificarEstadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(panelModificarEstadioLayout.createSequentialGroup()
                             .addComponent(jLabel18)
@@ -379,7 +379,7 @@ public class frameMain extends javax.swing.JFrame {
                     .addComponent(jLabel18)
                     .addComponent(tfCapacidadEstadio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(comboBoxEquipos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboBoxModificarEstadioEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnModificarEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(32, Short.MAX_VALUE))
@@ -664,7 +664,7 @@ public class frameMain extends javax.swing.JFrame {
             tfNombreEquipo.setText("");
             tfPaisEquipo.setText("");
 
-            DefaultComboBoxModel modelo = (DefaultComboBoxModel) comboBoxEquipos.getModel();
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
 
             for (Equipo equipo : equipos) {
                 modelo.addElement(equipo);
@@ -696,6 +696,14 @@ public class frameMain extends javax.swing.JFrame {
             tfNombreEstadio.setText("");
             tfCiudadEstadio.setText("");
             tfCapacidadEstadio.setText("");
+            
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            
+            for (Estadio estadio : estadios) {
+                modelo.addElement(estadio);
+            }
+            comboBoxModificarEstadioEquipo.setModel(modelo);
+            comboBoxEliminarEstadio.setModel(modelo);
 
             JOptionPane.showMessageDialog(this, "Estadio creado correctamente");
         }
@@ -720,14 +728,6 @@ public class frameMain extends javax.swing.JFrame {
             tfNacionalidadJugador.setText("");
             tfPieHabilJugador.setText("");
 
-            DefaultComboBoxModel modelo = (DefaultComboBoxModel) comboBoxEliminarJugador.getModel();
-
-            for (Jugador jugador : jugadores) {
-                modelo.addElement(jugador);
-            }
-
-            comboBoxEliminarJugador.setModel(modelo);
-
             if (equipos.get(comboBoxEquipoJugador.getSelectedIndex()).getPlantillas().size() < 4) {
                 if (comboBoxPosicionJugador.getSelectedIndex() == 0) {
                     Portero portero = new Portero(nombreJugador, edadJugador, nacionalidadJugador, pieHabilJugador, equipo);
@@ -751,6 +751,14 @@ public class frameMain extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Delantero creado correctamente");
                 }
             }
+            
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+
+            for (Jugador jugador : jugadores) {
+                modelo.addElement(jugador);
+            }
+
+            comboBoxEliminarJugador.setModel(modelo);
         }
     }//GEN-LAST:event_btnCrearJugadorMouseClicked
 
@@ -785,21 +793,31 @@ public class frameMain extends javax.swing.JFrame {
     private void btnEliminarEstadioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarEstadioMouseClicked
         if (comboBoxEliminarEstadio.getSelectedIndex() >= 0) {
             estadios.remove(comboBoxEliminarEstadio.getSelectedIndex());
-            for (Equipo equipo : equipos) {
-
-            }
+            JOptionPane.showMessageDialog(this, "Estadio eliminado correctamente");
+            comboBoxEliminarEstadio.setModel(updateStadiumComboBox());
         }
-        JOptionPane.showMessageDialog(this, "Estadio eliminado correctamente");
     }//GEN-LAST:event_btnEliminarEstadioMouseClicked
 
     private void btnEliminarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarJugadorMouseClicked
-
+        if (comboBoxEliminarJugador.getSelectedIndex() >= 0) {
+            jugadores.remove(comboBoxEliminarJugador.getSelectedIndex());
+            for (Jugador jugador : jugadores) {
+                
+            }
+        }
     }//GEN-LAST:event_btnEliminarJugadorMouseClicked
 
     private void btnModificarEstadioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarEstadioMouseClicked
 
     }//GEN-LAST:event_btnModificarEstadioMouseClicked
 
+    public DefaultComboBoxModel updateStadiumComboBox(){
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (Estadio estadio : estadios) {
+            modelo.addElement(estadio);
+        }
+        return modelo;
+    }
     /**
      * @param args the command line arguments
      */
@@ -850,9 +868,9 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboBoxEliminarJugador;
     private javax.swing.JComboBox<String> comboBoxEquipoJugador;
     private javax.swing.JComboBox<String> comboBoxEquipos;
-    private javax.swing.JComboBox<String> comboBoxEquipos1;
     private javax.swing.JComboBox<String> comboBoxModificarEquipo;
     private javax.swing.JComboBox<String> comboBoxModificarEquipoJugador;
+    private javax.swing.JComboBox<String> comboBoxModificarEstadioEquipo;
     private javax.swing.JComboBox<String> comboBoxPosicionJugador;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

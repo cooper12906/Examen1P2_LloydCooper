@@ -45,15 +45,8 @@ public class Estadio {
         this.equipo = equipo;
     }
     
-    private String nombreEquipo(){  
-        return this.equipo.getNombreEquipo();
-    }
-    
     @Override
     public String toString() {
-        return "Nombre del estadio: " + nombreEstadio + "\n" +
-               "Ciudad: " + ciudad + "\n" +
-               "Capacidad: " + capacidad + "\n" +
-               "Equipo dueño: " + nombreEquipo();
+        return nombreEstadio;
     }   
 }
